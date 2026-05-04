@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #0f0f1a;
+    color: white;
+    min-height: 100vh;
+    padding: 40px;
+    overflow-x: hidden;
+}
+
+/* Animated Background Glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,#00f5ff,#7b2ff7,#ff3cac,#00f5ff);
+    animation: rotateBg 15s linear infinite;
+    filter: blur(150px);
+    opacity: 0.25;
+    z-index: -1;
+}
+
+@keyframes rotateBg {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.btn-add {
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    background: linear-gradient(45deg,#00f5ff,#7b2ff7);
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,245,255,0.4);
+}
+
+/* Glass Table */
+.table-container {
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 40px rgba(0,245,255,0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: rgba(255,255,255,0.08);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+tbody tr {
+    transition: 0.3s;
+}
+
+tbody tr:hover {
+    background: rgba(0,245,255,0.1);
+    transform: scale(1.01);
+}
+
+/* Action Buttons */
+/* Kolom aksi biar lebih lega */
+td.aksi {
+    min-width: 150px;
+}
+
+/* Biar tombol tidak nempel */
+.aksi {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* jarak antar tombol */
+}
+
+/* Style tombol */
+.aksi a {
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.edit {
+    background: #00c6ff;
+    color: white;
+    width: 60px;
+}
+
+.edit:hover {
+    box-shadow: 0 5px 15px rgba(0,198,255,0.4);
+}
+
+.hapus {
+    background: #ff3cac;
+    color: white;
+}
+
+.hapus:hover {
+    box-shadow: 0 5px 15px rgba(255,60,172,0.4);
+}
