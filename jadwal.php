@@ -1,5 +1,6 @@
 <?php
-include 'koneksi.php';
+include "koneksi.php";
+include "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -38,23 +39,27 @@ include 'koneksi.php';
                 <?php
                 $query = mysqli_query($koneksi, "SELECT * FROM jadwal");
                 $no = 1;
-                while ($data = mysqli_fetch_array($query)) {
-                ?>
+                while ($data = mysqli_fetch_array($query)) { ?>
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $data['matkul']; ?></td>
-                    <td><?= $data['hari']; ?></td>
-                    <td><?= $data['jam_mulai']; ?></td>
-                    <td><?= $data['jam_selesai']; ?></td>
-                    <td><?= $data['ruangan']; ?></td>
-                    <td><?= $data['dosen']; ?></td>
-                    <td><?= $data['sks']; ?></td>
+                    <td><?= $no++ ?></td>
+                    <td><?= $data["matkul"] ?></td>
+                    <td><?= $data["hari"] ?></td>
+                    <td><?= $data["jam_mulai"] ?></td>
+                    <td><?= $data["jam_selesai"] ?></td>
+                    <td><?= $data["ruangan"] ?></td>
+                    <td><?= $data["dosen"] ?></td>
+                    <td><?= $data["sks"] ?></td>
                     <td class="aksi">
-                        <a href="edit.php?id=<?= $data['id']; ?>" class="edit">Edit</a>
-                        <a href="hapus.php?id=<?= $data['id']; ?>" class="hapus">Hapus</a>
+                        <a href="edit.php?id=<?= $data[
+                            "id"
+                        ] ?>" class="edit">Edit</a>
+                        <a href="hapus.php?id=<?= $data[
+                            "id"
+                        ] ?>" class="hapus">Hapus</a>
                     </td>
                 </tr>
-                <?php } ?>
+                <?php }
+                ?>
             </tbody>
         </table>
     </div>
